@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <title>Plainsboro</title>
+  </head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body {margin:0; background-color: #e1ecf7; overflow-x: hidden; display: flex; flex-direction: column;}
+
+    /* general color and position */
+    .icon {
+      width: 100%;
+      background-color: #c8dcf1;
+      overflow: auto;
+      position: absolute;
+      top: 0px;
+    }
+
+    /* Styles the icon tab*/
+
+    .icon a {
+      float: left;
+      width: 33.33%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 16px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 36px;
+      position: relative; /* this line is to make sure z-index works */
+      z-index: 2; /* to make the icons accesible */
+    }
+
+    .icon a:hover {
+      background-color: #aecbeb;
+    }
+
+    .active {
+      background-color: #99bee6;
+    }
+
+    /* to positon the header and choose its color and size and all */
+
+    .header{
+      background-color: #c8dcf1;
+      width: 100%;
+    }
+
+    .header h1{
+      margin-top: 70px;
+      text-align: center;
+      color: #99bee6;
+      width: 100%;
+      font-size: 60px;
+    }
+
+    /*annimation*/
+    .animate{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .animate div{
+      position: absolute;
+      display: block;
+      opacity: 0%;
+      z-index: 1;
+    }
+
+    .animate div img {
+      width: 50px;
+      height: 50px;
+    }
+
+    /*annimating the objects(images)*/
+    .animate div:nth-child(1) {
+      left: 10%;
+      top: 30%;
+      animation: animate 10s linear infinite;
+      animation-delay: -7s;
+    }
+
+    .animate div:nth-child(2) {
+      left: 30%;
+      top: 20%;
+      animation: animate 20s linear infinite;
+      animation-delay: -5s;
+    }
+
+    .animate div:nth-child(3) {
+      left: 20%;
+      top: 40%;
+      animation: animate 15s linear infinite;
+      animation-delay: -3s;
+    }
+
+    .animate div:nth-child(4) {
+      left: 60%;
+      top: 60%;
+      animation: animate 12s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .animate div:nth-child(5) {
+      left: 90%;
+      top: 50%;
+      animation: animate 11s linear infinite;
+      animation-delay: 0s;
+    }
+
+    .animate div:nth-child(6) {
+      left: 70%;
+      top: 10%;
+      animation: animate 14s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .animate div:nth-child(7) {
+      left: 40%;
+      top: 70%;
+      animation: animate 17s linear infinite;
+      animation-delay: 4s;
+    }
+
+    .animate div:nth-child(8) {
+      left: 80%;
+      top: 80%;
+      animation: animate 19s linear infinite;
+      animation-delay: 1s;
+    }
+
+    .animate div:nth-child(9) {
+      left: 50%;
+      top: 90%;
+      animation: animate 13s linear infinite;
+      animation-delay: 6s;
+    }
+
+    .animate div:nth-child(10) {
+      left: 100%;
+      top: 100%;
+      animation: animate 16s linear infinite;
+      animation-delay: 7s;
+    }
+    /*the main annimation part*/
+    @keyframes animate {
+      0%{
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+      }
+      10%{
+        opacity: 0.8;
+      }
+      20%{
+        transform: translateX(-20px) rotate(45deg);
+      }
+      40%{
+        transform: translateX(-20px) rotate(90deg);
+      }
+      60%{
+        transform: translateX(20px) rotate(180deg);
+      }
+      80%{
+        transform: translateX(-20px) rotate(180deg);
+      }
+      100%{
+        top: 110%;
+        transform: translateX(-20px) rotate(225deg);
+      }
+    }
+    .wrap{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+
+    }
+
+    #data{
+      border: 8px solid #aecbeb;
+      width: 50%;
+      height: 50%;
+      float: left;
+      border-radius: 10px;
+      margin-right: 40px;
+    }
+    .wrap2{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    #time{
+      width: 50%;
+      height: 50%;
+      float: left;
+      border-radius: 10px;
+      margin-right: 30px;
+      border: 8px solid #aecbeb;
+
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+
+    }
+  </style>
+
+  <body>
+
+    <div class = "header">
+      <h1>Waste Produced in NJ</h1>
+    </div>
+
+    <div class="icon">
+      <a href = "website.html" id = "home"><i class = "fa fa-home"></i></a>
+      <a href="recycle.html" id = "globe"><i class="fa fa-globe"></i></a/>
+      <a class="active" href="trash.html" id = "trash"><i class="fa fa-trash"></i></a/>
+    </div>
+
+    <div class = "animate">
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+    </div>
+
+    <div class = "wrap">
+
+      <img src="data.png" id="data">
+
+      <div class = "text">
+        <h3><strong>Solid Waste Management in New Jersey</strong></h3>
+        <p>
+          In the past, around 2010, New Jersey faced a significant challenge with approximately 22 million tons of solid waste generated, translating to about 5,000 pounds per person.
+          Notably, the state successfully recycled 13.3 million tons, representing 60.5% of the total generated. In the accompanying pie chart, Middlesex County, encompassing Plainsboro,
+          emerges as the second most recycled county in New Jersey. While Plainsboro is part of this accomplishment, it's essential to recognize the collective effort within this expansive
+          county. To claim the title of the most recycled county in New Jersey, it is imperative for everyone to embrace proper recycling practices. Let's learn together and propel Middlesex
+          County to the forefront of sustainable communities.
+        </p>
+      </div>
+    </div>
+
+    <div class = "wrap2">
+
+      <img src="https://www.liveabout.com/thmb/xoXSaBF8_3pqX9pJNuh59MXcSNc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-long-does-it-take-garbage-to-decompose-2878033-final-0077a4ff210647dbabc6612bbc50c8e1.png" id="time">
+
+      <div class = "text">
+        <h3>Slow Process</h3>
+        <p>
+          The increasing volume of waste is a major concern for humans and the environment. The best way to deal with this problem is to avoid products that generate waste materials that take
+          more than a year to decompose in landfills. Every household and organization should also have a proactive plan for recycling to divert more materials away from the waste stream.
+        </p>
+  </body>
+
+</html>

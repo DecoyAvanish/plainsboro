@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <title>Plainsboro</title>
+  </head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body {margin:0; background-color: #fbe4ff; overflow: hidden}
+
+    /* positions img */
+
+    img{
+      display: block;
+      margin-right: auto;
+    }
+
+    /* general color and position */
+
+    .icon {
+      width: 100%;
+      background-color: #f2daff;
+      overflow: auto;
+      position: absolute;
+      top: 0px;
+    }
+
+    /* Styles the icon tab*/
+
+    .icon a {
+      float: left;
+      width: 33.33%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 16px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 36px;
+      position: relative; /* this line is to make sure z-index works */
+      z-index: 2; /* to make the icons accesible */
+    }
+
+    .icon a:hover {
+      background-color: #e9cfff;
+    }
+
+    .active {
+      background-color: #e3c7ff;
+    }
+
+    /* to positon the header and choose its color and size and all */
+
+    .header{
+      background-color: #f2daff;
+      width: 100%;
+    }
+
+    .header h1{
+      margin-top: 70px;
+      text-align: center;
+      color: #e3c7ff;
+      width: 100%;
+      font-size: 60px;
+    }
+
+    /*annimation*/
+    .animate{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .animate div{
+      position: absolute;
+      display: block;
+      opacity: 0%;
+    }
+
+    .animate div img {
+      width: 50px;
+      height: 50px;
+    }
+
+    /*annimating the objects(images)*/
+    .animate div:nth-child(1) {
+      left: 10%;
+      top: 30%;
+      animation: animate 10s linear infinite;
+      animation-delay: -7s;
+    }
+
+    .animate div:nth-child(2) {
+      left: 30%;
+      top: 20%;
+      animation: animate 20s linear infinite;
+      animation-delay: -5s;
+    }
+
+    .animate div:nth-child(3) {
+      left: 20%;
+      top: 40%;
+      animation: animate 15s linear infinite;
+      animation-delay: -3s;
+    }
+
+    .animate div:nth-child(4) {
+      left: 60%;
+      top: 60%;
+      animation: animate 12s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .animate div:nth-child(5) {
+      left: 90%;
+      top: 50%;
+      animation: animate 11s linear infinite;
+      animation-delay: 0s;
+    }
+
+    .animate div:nth-child(6) {
+      left: 70%;
+      top: 10%;
+      animation: animate 14s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .animate div:nth-child(7) {
+      left: 40%;
+      top: 70%;
+      animation: animate 17s linear infinite;
+      animation-delay: 4s;
+    }
+
+    .animate div:nth-child(8) {
+      left: 80%;
+      top: 80%;
+      animation: animate 19s linear infinite;
+      animation-delay: 1s;
+    }
+
+    .animate div:nth-child(9) {
+      left: 50%;
+      top: 90%;
+      animation: animate 13s linear infinite;
+      animation-delay: 6s;
+    }
+
+    .animate div:nth-child(10) {
+      left: 100%;
+      top: 100%;
+      animation: animate 16s linear infinite;
+      animation-delay: 7s;
+    }
+    /*the main annimation part*/
+    @keyframes animate {
+      0%{
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+      }
+      10%{
+        opacity: 0.8;
+      }
+      20%{
+        transform: translateX(-20px) rotate(45deg);
+      }
+      40%{
+        transform: translateX(-20px) rotate(90deg);
+      }
+      60%{
+        transform: translateX(20px) rotate(180deg);
+      }
+      80%{
+        transform: translateX(-20px) rotate(180deg);
+      }
+      100%{
+        top: 110%;
+        transform: translateX(-20px) rotate(225deg);
+      }
+    }
+
+  </style>
+  <body>
+
+    <div class = "header">
+      <h1>Energy's Impact on Plainsboro</h1>
+    </div>
+
+    <div class="icon">
+      <a href = "website.html" id = "home"><i class = "fa fa-home"></i></a>
+      <a href="recycle.html" id = "globe"><i class="fa fa-globe"></i></a/>
+      <a href="trash.html" id = "trash"><i class="fa fa-trash"></i></a/>
+    </div>
+
+    <div class = "animate">
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+    </div>
+  </body>
+
+</html>

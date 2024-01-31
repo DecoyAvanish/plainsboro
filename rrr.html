@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <title>Plainsboro</title>
+  </head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body {margin:0; background-color: #e1ecf7; overflow-x: hidden; display: flex; flex-direction: column;}
+
+    /* general color and position */
+    .icon {
+      width: 100%;
+      background-color: #c8dcf1;
+      overflow: auto;
+      position: absolute;
+      top: 0px;
+    }
+
+    /* Styles the icon tab*/
+
+    .icon a {
+      float: left;
+      width: 33.33%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 16px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 36px;
+      position: relative; /* this line is to make sure z-index works */
+      z-index: 2; /* to make the icons accesible */
+    }
+
+    .icon a:hover {
+      background-color: #aecbeb;
+    }
+
+    .active {
+      background-color: #99bee6;
+    }
+
+    /* to positon the header and choose its color and size and all */
+
+    .header{
+      background-color: #c8dcf1;
+      width: 100%;
+    }
+
+    .header h1{
+      margin-top: 70px;
+      text-align: center;
+      color: #99bee6;
+      width: 100%;
+      font-size: 60px;
+    }
+
+    /*annimation*/
+    .animate{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .animate div{
+      position: absolute;
+      display: block;
+      opacity: 0%;
+      z-index: 1;
+    }
+
+    .animate div img {
+      width: 50px;
+      height: 50px;
+    }
+
+    /*annimating the objects(images)*/
+    .animate div:nth-child(1) {
+      left: 10%;
+      top: 30%;
+      animation: animate 25s linear infinite;
+      animation-delay: -7s;
+    }
+
+    .animate div:nth-child(2) {
+      left: 30%;
+      top: 20%;
+      animation: animate 30s linear infinite;
+      animation-delay: -5s;
+    }
+
+    .animate div:nth-child(3) {
+      left: 20%;
+      top: 40%;
+      animation: animate 20s linear infinite;
+      animation-delay: -3s;
+    }
+
+    .animate div:nth-child(4) {
+      left: 60%;
+      top: 60%;
+      animation: animate 29s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .animate div:nth-child(5) {
+      left: 90%;
+      top: 50%;
+      animation: animate 23s linear infinite;
+      animation-delay: 0s;
+    }
+
+    .animate div:nth-child(6) {
+      left: 70%;
+      top: 10%;
+      animation: animate 26s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .animate div:nth-child(7) {
+      left: 40%;
+      top: 70%;
+      animation: animate 27s linear infinite;
+      animation-delay: 4s;
+    }
+
+    .animate div:nth-child(8) {
+      left: 80%;
+      top: 80%;
+      animation: animate 29s linear infinite;
+      animation-delay: 21s;
+    }
+
+    .animate div:nth-child(9) {
+      left: 50%;
+      top: 90%;
+      animation: animate 24s linear infinite;
+      animation-delay: 6s;
+    }
+
+    .animate div:nth-child(10) {
+      left: 100%;
+      top: 100%;
+      animation: animate 28s linear infinite;
+      animation-delay: 7s;
+    }
+    /*the main annimation part*/
+    @keyframes animate {
+      0%{
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+      }
+      10%{
+        opacity: 0.8;
+      }
+      20%{
+        transform: translateX(-20px) rotate(45deg);
+      }
+      40%{
+        transform: translateX(-20px) rotate(90deg);
+      }
+      60%{
+        transform: translateX(20px) rotate(180deg);
+      }
+      80%{
+        transform: translateX(-20px) rotate(180deg);
+      }
+      100%{
+        top: 110%;
+        transform: translateX(-20px) rotate(225deg);
+      }
+    }
+
+    .reduce{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+    }
+
+    #reduce{
+      width: 50%;
+      height: 50%;
+      float: left;
+      border-radius: 10px;
+      border: 8px solid #aecbeb;
+      margin-right: 40px;
+    }
+
+    .reuse{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+    }
+
+    #reuse{
+      width: 30%;
+      height: 30%;
+      float: left;
+      border: 8px solid #aecbeb;
+      border-radius: 10px;
+      margin-right: 40px;
+    }
+
+    .rec{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+    }
+
+    #recycle{
+      width: 30%;
+      height: 30%;
+      float: left;
+      border: 8px solid #aecbeb;
+      border-radius: 10px;
+      margin-right: 40px;
+    }
+  </style>
+
+  <body>
+
+    <div class = "header">
+      <h1>How to follow the 3 R's</h1>
+    </div>
+
+    <div class="icon">
+      <a href = "website.html" id = "home"><i class = "fa fa-home"></i></a>
+      <a href="recycle.html" id = "globe"><i class="fa fa-globe"></i></a/>
+      <a class="active" href="trash.html" id = "trash"><i class="fa fa-trash"></i></a/>
+    </div>
+
+    <div class = "animate">
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+    </div>
+
+    <div class = "reduce">
+      <img src="reduce.png" id="reduce">
+
+      <div class = "text">
+        <h3><strong>Revive & Thrive</strong></h3>
+        <p>
+          Reducing waste at the source is a crucial step towards a more sustainable and eco-friendly lifestyle. Embracing a minimalist approach by prioritizing mindful consumption and avoiding
+          unnecessary purchases can significantly minimize environmental impact. Opting for reusable items, such as water bottles and shopping bags, helps cut down on single-use plastics, contributing
+          to a reduction in plastic pollution. Choosing to buy in bulk and composting organic waste further decreases packaging and diverts materials from landfills. Repairing items instead of replacing
+          them, selecting durable products, and supporting sustainable brands are additional measures to consider. Educating oneself about local recycling guidelines and advocating for sustainable
+          practices, such as using digital documents over paper, collectively contribute to a substantial reduction in waste at the source. By incorporating these practices into our daily lives, we
+          can play an active role in fostering a more environmentally conscious and waste-conscious community.
+        </p>
+      </div>
+    </div>
+
+    <div class = "reuse">
+      <img src="reuse.png" id="reuse">
+
+      <div class = "text">
+        <h3><strong>Simplicity Shift</strong></h3>
+        <p>
+          Embracing a culture of reuse is a powerful and accessible way to contribute to a more sustainable and environmentally friendly lifestyle. By opting for reusable bags and containers,
+          individuals can significantly cut down on single-use packaging, both at the grocery store and during meals on the go. Exploring secondhand shopping options not only promotes the reuse of
+          clothing and household items but also provides a unique and cost-effective way to refresh one's possessions. Creativity can be unleashed through upcycling, transforming old items into new
+          and practical objects. Reusing glass jars for storage, embracing reusable coffee cups, and making the switch to cloth napkins are simple yet impactful steps towards reducing disposable waste.
+          Hand-me-downs, both in terms of clothing and other items, encourage community sharing and extend the lifespan of goods. Additionally, adopting reusable beeswax wraps, exploring swap events,
+          and considering cloth diapers for infants further demonstrate the diverse opportunities for incorporating reuse into daily life. Through these practices, individuals can actively contribute
+          to minimizing their ecological footprint and fostering a more circular and sustainable economy.
+        </p>
+      </div>
+    </div>
+
+    <div class = "rec">
+      <img src="recy.png" id="recycle">
+
+      <div class = "text">
+        <h3><strong>EcoLoop</strong></h3>
+        <p>
+          Adopting effective recycling practices is a fundamental step towards building a sustainable and environmentally conscious lifestyle. Start by understanding your local recycling guidelines to
+          ensure proper sorting and disposal. Clean and rinse containers before recycling to prevent contamination, and always check for recycling symbols on packaging to identify recyclable materials.
+          Separating materials correctly and removing caps and lids from containers are simple yet impactful measures. Flatten cardboard boxes to optimize space, and responsibly recycle electronics
+          through designated centers. Consider donating or selling unwanted items before resorting to recycling. Educate yourself on hazardous waste disposal and reduce contamination by avoiding
+          non-recyclable items in recycling bins. Support local recycling initiatives, participate in recycling events, and purchase products made from recycled materials to contribute to the
+          recycling industry. By spreading awareness and encouraging others to adopt responsible recycling habits, we can collectively contribute to building a more sustainable and circular economy.
+        </p>
+      </div>
+    </div>
+
+  </body>
+
+</html>

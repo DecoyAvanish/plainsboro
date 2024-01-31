@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <title>Plainsboro</title>
+  </head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    body {margin:0; background-color: #e1ecf7; overflow-x: hidden; display: flex; flex-direction: column;}
+
+    /* general color and position */
+    .icon {
+      width: 100%;
+      background-color: #c8dcf1;
+      overflow: auto;
+      position: absolute;
+      top: 0px;
+    }
+
+    /* Styles the icon tab*/
+
+    .icon a {
+      float: left;
+      width: 33.33%;
+      box-sizing: border-box;
+      text-align: center;
+      padding: 16px;
+      transition: all 0.3s ease;
+      color: white;
+      font-size: 36px;
+      position: relative; /* this line is to make sure z-index works */
+      z-index: 2; /* to make the icons accesible */
+    }
+
+    .icon a:hover {
+      background-color: #aecbeb;
+    }
+
+    .active {
+      background-color: #99bee6;
+    }
+
+    /* to positon the header and choose its color and size and all */
+
+    .header{
+      background-color: #c8dcf1;
+      width: 100%;
+    }
+
+    .header h1{
+      margin-top: 70px;
+      text-align: center;
+      color: #99bee6;
+      width: 100%;
+      font-size: 60px;
+    }
+
+    /*annimation*/
+    .animate{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .animate div{
+      position: absolute;
+      display: block;
+      opacity: 0%;
+      z-index: 1;
+    }
+
+    .animate div img {
+      width: 50px;
+      height: 50px;
+    }
+
+    /*annimating the objects(images)*/
+    .animate div:nth-child(1) {
+      left: 10%;
+      top: 30%;
+      animation: animate 25s linear infinite;
+      animation-delay: -7s;
+    }
+
+    .animate div:nth-child(2) {
+      left: 30%;
+      top: 20%;
+      animation: animate 30s linear infinite;
+      animation-delay: -5s;
+    }
+
+    .animate div:nth-child(3) {
+      left: 20%;
+      top: 40%;
+      animation: animate 20s linear infinite;
+      animation-delay: -3s;
+    }
+
+    .animate div:nth-child(4) {
+      left: 60%;
+      top: 60%;
+      animation: animate 29s linear infinite;
+      animation-delay: -1s;
+    }
+
+    .animate div:nth-child(5) {
+      left: 90%;
+      top: 50%;
+      animation: animate 23s linear infinite;
+      animation-delay: 0s;
+    }
+
+    .animate div:nth-child(6) {
+      left: 70%;
+      top: 10%;
+      animation: animate 26s linear infinite;
+      animation-delay: 2s;
+    }
+
+    .animate div:nth-child(7) {
+      left: 40%;
+      top: 70%;
+      animation: animate 27s linear infinite;
+      animation-delay: 4s;
+    }
+
+    .animate div:nth-child(8) {
+      left: 80%;
+      top: 80%;
+      animation: animate 29s linear infinite;
+      animation-delay: 21s;
+    }
+
+    .animate div:nth-child(9) {
+      left: 50%;
+      top: 90%;
+      animation: animate 24s linear infinite;
+      animation-delay: 6s;
+    }
+
+    .animate div:nth-child(10) {
+      left: 100%;
+      top: 100%;
+      animation: animate 28s linear infinite;
+      animation-delay: 7s;
+    }
+    /*the main annimation part*/
+    @keyframes animate {
+      0%{
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+      }
+      10%{
+        opacity: 0.8;
+      }
+      20%{
+        transform: translateX(-20px) rotate(45deg);
+      }
+      40%{
+        transform: translateX(-20px) rotate(90deg);
+      }
+      60%{
+        transform: translateX(20px) rotate(180deg);
+      }
+      80%{
+        transform: translateX(-20px) rotate(180deg);
+      }
+      100%{
+        top: 110%;
+        transform: translateX(-20px) rotate(225deg);
+      }
+    }
+
+    .bulk{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+    }
+
+    #bulkwaste{
+      width: 50%;
+      height: 50%;
+      border: 8px solid #aecbeb;
+      float: left;
+      border-radius: 10px;
+      margin-right: 40px;
+    }
+
+    .haza{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+    }
+
+    #hazard{
+      width: 30%;
+      height: 30%;
+      border: 8px solid #aecbeb;
+      float: left;
+      border-radius: 10px;
+      margin-right: 40px;
+    }
+
+    .rec{
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      min-heigh; 180px;
+      margin: 30px;
+      width: 100%;
+    }
+
+    .text{
+      color: #99bee6;
+      font-size: 24px;
+      margin-right: 50px;
+    }
+
+    .text h3{
+      font-size: 35px;
+      text-align: center;
+    }
+
+    #recycle{
+      width: 10%;
+      border: 8px solid #aecbeb;
+      height: 10%;
+      float: left;
+      border-radius: 10px;
+      margin-right: 40px;
+    }
+  </style>
+
+  <body>
+
+    <div class = "header">
+      <h1>How to Dispose of Waste?</h1>
+    </div>
+
+    <div class="icon">
+      <a href = "website.html" id = "home"><i class = "fa fa-home"></i></a>
+      <a href="recycle.html" id = "globe"><i class="fa fa-globe"></i></a/>
+      <a class="active" href="trash.html" id = "trash"><i class="fa fa-trash"></i></a/>
+    </div>
+
+    <div class = "animate">
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+      <div><img src = "https://clipart-library.com/2023/green-leaves-clipart-xl.png"></div>
+    </div>
+
+    <div class = "bulk">
+      <img src="bulkwaste.png" id="bulkwaste">
+
+      <div class = "text">
+        <h3><strong>Bulk Waste Management</strong></h3>
+        <p>
+          The Bulk Waste Drop-Off service offers Plainsboro residents a convenient option for disposing of items that aren't typically collected by their private waste hauler. The accepted items are
+          listed on the left. Notably, commonly recycled items through curbside pickup, such as cardboard, plastic bottles/cans, and metal bottles/cans, are not accepted. Additionally, the facility
+          does not accept construction and demolition debris; however, residents can dispose of small quantities of masonry and paving items. Residents must provide proof of residency before entering
+          the Conservation Center. It's important to note that commercial vehicles are generally not allowed at the facility unless prior arrangements have been made with the Department of Public Works. F
+          or more information, please contact the Department of Public Works at 609-799-0099.
+        </p>
+      </div>
+    </div>
+
+    <div class = "haza">
+      <img src="hazard.png" id="hazard">
+
+      <div class = "text">
+        <h3><strong>Hazard Waste Management</strong></h3>
+        <p>
+          The Middlesex County Division of Solid Waste Management offers county residents the opportunity to safely dispose of hazardous household items, such as drain cleaner, kerosene, paint thinner,
+          etc., six times a year. The disposal of these items is free, and residents are required to leave the waste in the original container with the label intact, with a limit of 10 gallons per
+          container. Only residential waste will be accepted during these collections, and commercial or industrial waste will not be accommodated. For detailed information on collection dates,
+          locations, and accepted items, please visit the county website [link] or contact the Middlesex County Division of Solid Waste at 732-745-4170. This service is exclusively available to
+          Middlesex County residents, and proof of residency (driver's license) is required. Note that the collection is limited to residential waste; no waste from commercial or industrial sources
+          will be accepted.
+        </p>
+      </div>
+    </div>
+
+    <div class = "rec">
+      <img src="recycle.png" id="recycle">
+
+      <div class = "text">
+        <h3><strong>Recycle Management</strong></h3>
+        <p>
+          The Middlesex County Improvement Authority (MCIA) offers biweekly collection of recyclable materials for Plainsboro residents. To participate, residents must use the provided round blue
+          container for commingled recyclables, including cans, bottles, plastic containers, cardboard, paper, and newspaper. Collection times are subject to change, so it's important to have all
+          containers ready for pickup by 6 a.m. To ensure proper identification, the MCIA recommends residents write their name and address on each container using a permanent marker.
+        </p>
+      </div>
+    </div>
+
+  </body>
+
+</html>
